@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 67%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/*----------------------------
+      HEADER SECTION STYLE
+  ----------------------------*/
+
+.header {
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.05);
+  padding: 1rem 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color: #130f40;
+}
+
+.header .logo i {
+  padding-right: 0.5rem;
+  color: #27ae60;
+}
+
+.header .navbar a {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  color: #666;
+  text-decoration: none;
+}
+
+.header .navbar a:hover {
+  color: #fff;
+  background-color: #27ae60;
+  transition: all 0.3s ease;
+}
+
+.header .bar i,
+.header .bar a {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.7rem;
+  color: #130f40;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.header .bar i:hover,
+.header .bar a:hover {
+  color: #fff;
+  background: #27ae60;
+}
+
+.header .bar #menu-bars {
+  display: none;
+}
+
+/*----------------------------
+      HEADER SECTION STYLE
+  ----------------------------*/
+
+/*----------------------------
+       CART SECTION STYLE
+  ----------------------------*/
+
+.products-container {
+  max-width: 650px;
+  justify-content: space-around;
+  margin: 0 auto;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+}
+
+.products-container i {
+  font-size: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.product-header { 
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 4px solid #27ae60;
+  margin: 0 auto;
+  font-size: large;
+}
+
+.product-title {
+  width: 30%;
+}
+
+.price,
+.quantity,
+.total {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity i {
+  color: #27ae60;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.product-container {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  border-bottom: 1px solid #27ae60;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #27ae60;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  width: 30%;
+}
+
+.product img {
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+}
+
+.product i {
+  cursor: pointer;
+  color: #27ae60;
+}
+
+.products {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products img {
+  width: 90px;
+  height: 90px;
+  align-items: center;
+}
+
+.basketTotalContainer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.basketTotalTitle {
+  width: 15%;
+}
+
+.basketTotal {
+  width: 20%;
+}
+
+/*----------------------------
+       CART SECTION STYLE
+  ----------------------------*/
+
+/*----------------------------
+       RESPONSIVE STYLES
+  ----------------------------*/
+
+@media (max-width:991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width:768px) {
+  .header .bar #menu-bars {
+    display: inline-block;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background: #eee;
+  }
+}
