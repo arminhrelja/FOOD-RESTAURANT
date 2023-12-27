@@ -212,6 +212,7 @@ function removeFromCart(productTag) {
   }
 }
 
+//Funkcija za smanjenje broja određenog proizvoda
 function decreaseQuantity(productTag) {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
@@ -219,16 +220,19 @@ function decreaseQuantity(productTag) {
   if(cartItems && cartItems[productTag] && cartItems[productTag].inCart > 1) {
     cartItems[productTag].inCart--;
 
+    //Ažuriranje broja proizvoda
     let productNumbers = localStorage.getItem("cartNumbers");
     productNumbers = parseInt(productNumbers);
     localStorage.setItem("cartNumbers", productNumbers - 1);
 
+    //Ažuriranje cijene proizvoda
     let cartCost = localStorage.getItem("totalCost");
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost - cartItems[productTag].price);
 
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 
+    //Ponovni prikaz cart-a
     displayCart();
     onLoadCartNumbers();
   }
@@ -241,16 +245,19 @@ function increaseQuantity(productTag) {
   if (cartItems && cartItems[productTag]) {
     cartItems[productTag].inCart++;
 
+    //Ažuriranje broja proizvoda
     let productNumbers = localStorage.getItem("cartNumbers");
     productNumbers = parseInt(productNumbers);
     localStorage.setItem("cartNumbers", productNumbers + 1);
 
+    //Ažuriranje cijene proizvoda
     let cartCost = localStorage.getItem("totalCost");
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost + cartItems[productTag].price);    
 
     localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 
+    //Ponovni prikaz cart-a
     displayCart();
     onLoadCartNumbers();
   }
